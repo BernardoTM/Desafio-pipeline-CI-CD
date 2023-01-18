@@ -36,6 +36,23 @@ jobs:
       with:
         method: kubeconfig
         kubeconfig: ${{secrets.K8S_CONFIG}}
+    - name: Helm tool installer
+      uses: Azure/setup-helm@v3
+      with:
+        version: latest
+        
+    - name: Run deploy
+      run: |
+        helm upgrade install nginx -n bernardo-tavares ./charts/my-nginx/ --set image=bernardotmota/nginx:latest
           
-      
-            
+          
+          
+          
+          
+          
+          
+          
+
+
+
+
