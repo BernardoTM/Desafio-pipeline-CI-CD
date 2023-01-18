@@ -43,7 +43,7 @@ jobs:
         
     - name: Run deploy
       run: |
-        helm upgrade nginx -n bernardo-tavares ./charts/my-nginx/ --set image=bernardotmota/nginx:latest
+        helm upgrade nginx -n bernardo-tavares ./charts/my-nginx/ --set nginx.image=bernardotmota/nginx:latest
           
           
           
