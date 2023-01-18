@@ -35,7 +35,7 @@ jobs:
       uses: Azure/k8s-set-context@v3.0
       with:
         method: kubeconfig
-        kubeconfig: ${{secrets.KBS_CONFIG}}
+        kubeconfig: ${{secrets.K8S_CONFIG}}
           
       
             
