@@ -21,6 +21,7 @@ jobs:
           context: ./src
           file: ./src/Dockerfile
           push: true
-          tags:
-            bernardotmota/nginx:${{github.run.number}}
+          tags: |
+            bernardotmota/nginx:${{github.run_number}}
             bernardotmota/nginx:latest
+            
