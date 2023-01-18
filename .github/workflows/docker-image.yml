@@ -1,0 +1,26 @@
+name: CI-CD
+
+on:
+  push:
+    branches: [ "main" ]
+    
+jobs:
+  CI:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3.3.0
+      - name: Docker Login
+        uses: docker/login-action@v2.1.0
+        with:
+          username: ${{security.DOCKERHUB_USER}}
+          password: ${{security.DOCKERHUB_PWD}}
+      - name: Build and push Docker images
+        uses: docker/build-push-action@v3.3.0
+        with:
+          context: ./src
+          file: ./src/Dockerfile
+          push: true
+          tags:
+            bernardotmota/nginx:v${{github.run.number}}
+            bernardotmota/nginx:latest
