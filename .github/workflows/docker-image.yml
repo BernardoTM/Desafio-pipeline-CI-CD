@@ -22,5 +22,5 @@ jobs:
           file: ./src/Dockerfile
           push: true
           tags:
-            bernardotmota/nginx:v${{github.run.number}}
+            bernardotmota/nginx:${{github.run.number}}
             bernardotmota/nginx:latest
